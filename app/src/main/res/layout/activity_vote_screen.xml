@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_vote_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pazeamor"
+    tools:context="br.uff.labmoveis.sobrazero.VoteScreen">
+
+    <include layout="@layout/footer" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:padding="20dp">
+
+        <TextView
+            android:text="Vote na sua comida preferida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/textView2"
+            android:textSize="20sp"
+            android:textColor="#FFF"
+            android:gravity="center" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="100dp">
+
+            <RadioButton
+                android:text="Chocolate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton3"
+                android:background="#66FFFFFF"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:text="Doce de Leite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton2"
+                android:background="#66FFFFFF"
+                android:textColor="#000"
+                android:layout_marginTop="5dp" />
+
+            <RadioButton
+                android:text="Strognoff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/radioButton"
+                android:background="#66FFFFFF"
+                android:textColor="#000"
+                android:layout_marginTop="5dp" />
+        </RadioGroup>
+
+        <Button
+            android:text="Enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_btn"
+            android:textAlignment="center"
+            android:background="#66FFFFFF"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:text="Entre em contato"
+            android:layout_width="151dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:layout_marginTop="50dp"
+            android:textColor="#000"
+            android:background="#66FFFFFF" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

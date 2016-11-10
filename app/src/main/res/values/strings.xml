@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Sobra Zero</string>
-    <string name="sobras_do_dia_106_kg">Sobras do Dia : 106 kg</string>
-    <string name="imagem_lixeira">Imagem Lixeira</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="vis_resto">Visualizar restos</string>
+    <string name="vote_refe">Vote na refeição</string>
+    <string name="fale_con">Fale Conosco</string>
 </resources>
