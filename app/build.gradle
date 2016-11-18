@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
+
+    compileSdkVersion 18
     buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "br.uff.labmoveis.sobrazero"
-        minSdkVersion 18
-        targetSdkVersion 19
+        minSdkVersion 15
+        targetSdkVersion 18
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

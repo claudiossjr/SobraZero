@@ -11,55 +11,15 @@
         layout="@layout/footer"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:id="@+id/button"
-        android:onClick="apertarBotao"
-        android:layout_below="@+id/editText4"
-        android:layout_centerHorizontal="true"
-        android:textColor="#FFF"
-        android:background="#66333333"
-        android:layout_marginTop="80dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:text="E-mail..."
-        android:layout_marginTop="10dp"
-        android:textColor="#FFF"
-        android:background="#66333333"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:textColor="#FFF"
-        android:background="#66333333"
-        android:layout_marginTop="10dp"
-        android:id="@+id/editText2"
-        android:text="Telefone..."
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
+        android:id="@+id/etName"
+        android:text="Nome..."
         android:textColor="#FFF"
         android:background="#66333333"
-        android:id="@+id/editText3"
-        android:text="Nome..."
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp" />
@@ -67,21 +27,61 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
+        android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/editText4"
+
+        android:id="@+id/etEmail"
+        android:text="E-mail..."
         android:textColor="#FFF"
         android:background="#66333333"
-        android:text="Mensagem..."
-        android:layout_centerVertical="true"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2" />
+        android:layout_below="@+id/etName"
+        android:layout_alignLeft="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:layout_marginTop="10dp"/>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"></TableRow>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+
+        android:id="@+id/etPhone"
+        android:text="Telefone..."
+        android:textColor="#FFF"
+        android:background="#66333333"
+        android:layout_below="@+id/etEmail"
+        android:layout_alignLeft="@+id/etEmail"
+        android:layout_alignStart="@+id/etEmail"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+
+        android:id="@+id/etMessage"
+        android:text="Mensagem..."
+        android:height="100dp"
+        android:textColor="#FFF"
+        android:background="#66333333"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/etPhone"
+        android:layout_alignLeft="@+id/etPhone"
+        android:layout_alignStart="@+id/etPhone"
+        android:layout_marginTop="10dp"
+        android:selectAllOnFocus="false" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar"
+        android:id="@+id/btnSend"
+        android:onClick="apertarBotao"
+        android:background="#66FFFFFF"
+        android:textColor="#000"
+        android:layout_below="@+id/etMessage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
 
 </RelativeLayout>
