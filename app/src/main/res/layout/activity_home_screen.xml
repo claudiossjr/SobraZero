@@ -47,7 +47,10 @@
             android:id="@+id/fale_con_btn"
             android:textColor="#FFF"
             android:background="#66333333"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:onClick="onClickContact"/>
+
+
     </LinearLayout>
 
 </RelativeLayout>

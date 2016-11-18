@@ -4,13 +4,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class TelaSobras extends AppCompatActivity {
+import br.uff.labmoveis.sobrazero.Listeners.IScreen;
+
+public class TelaSobras extends AppCompatActivity implements IScreen {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_sobras);
+
+        Button bExit = (Button) findViewById(R.id.btnExit);
+        bExit.setOnClickListener(getExitListener(this));
+    }
+
+    public View.OnClickListener getExitListener(final IScreen hmScreen)
+    {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button btn = (Button) view;
+                hmScreen.finishActivity();
+            }
+        };
     }
 
     @Override
@@ -41,5 +59,10 @@ public class TelaSobras extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void finishActivity() {
+        finish();
     }
 }

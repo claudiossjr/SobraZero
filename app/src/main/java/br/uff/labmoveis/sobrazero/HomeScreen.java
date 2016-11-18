@@ -2,22 +2,36 @@ package br.uff.labmoveis.sobrazero;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
-public class HomeScreen extends AppCompatActivity {
+import br.uff.labmoveis.sobrazero.Listeners.IScreen;
+
+public class HomeScreen extends AppCompatActivity implements IScreen{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("Sobra Zero");
         setContentView(R.layout.activity_home_screen);
+
+        Button bExit = (Button) findViewById(R.id.btnExit);
+        bExit.setOnClickListener(getExitListener(this));
     }
 
+    public View.OnClickListener getExitListener(final IScreen hmScreen)
+    {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Button btn = (Button) view;
+                hmScreen.finishActivity();
+            }
+        };
+    }
 
     public void onClickSobras (View v ) {
         Intent intent = new Intent(HomeScreen.this, TelaSobras.class);
@@ -26,6 +40,11 @@ public class HomeScreen extends AppCompatActivity {
 
     public void onClickVote (View v ) {
         Intent intent = new Intent(HomeScreen.this, VoteScreen.class);
+        startActivity(intent);
+    }
+
+    public void onClickContact (View v ) {
+        Intent intent = new Intent(HomeScreen.this, ContactScreen.class);
         startActivity(intent);
     }
 
@@ -59,4 +78,8 @@ public class HomeScreen extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void finishActivity(){
+        finish();
+    }
 }
