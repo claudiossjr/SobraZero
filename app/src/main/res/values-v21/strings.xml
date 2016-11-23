@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ver_resto">Visualiza Restos</string>
+    <string name="vote_refeicao">Vote na refeição</string>
+    <string name="fale_conosco">Fale Conosco</string>
+    <string name="app_name_admin">Sobra Zero - Admin</string>
+</resources>

@@ -2,10 +2,10 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_contact_screen"
+    android:id="@+id/activity_votacao_admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactScreen">
+    tools:context=".VotacaoAdmin">
 
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".ContactScreen">
+        tools:context=".VotacaoAdmin">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -41,83 +41,69 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".ContactScreen"
+            tools:context=".VotacaoAdmin"
             android:background="@drawable/pazeamor">
 
             <include
                 layout="@layout/footer"
                 />
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/etName"
-                android:text="Nome..."
+                android:layout_height="wrap_content"
+                android:text="Editar Saudação do usuário: "
                 android:textColor="#FFF"
-                android:background="#66333333"
-                android:layout_alignParentTop="true"
+                android:id="@+id/tvVotacao"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/linearAlimentos"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="130dp" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:inputType="textEmailAddress"
-                android:ems="10"
-                android:id="@+id/etEmail"
-                android:text="E-mail..."
-                android:textColor="#FFF"
-                android:background="#66333333"
-                android:layout_below="@+id/etName"
-                android:layout_alignLeft="@+id/etName"
-                android:layout_alignStart="@+id/etName"
-                android:layout_marginTop="10dp"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:inputType="phone"
-                android:ems="10"
-                android:id="@+id/etPhone"
-                android:text="Telefone..."
-                android:textColor="#FFF"
-                android:background="#66333333"
-                android:layout_below="@+id/etEmail"
-                android:layout_alignLeft="@+id/etEmail"
-                android:layout_alignStart="@+id/etEmail"
-                android:layout_marginTop="10dp"/>
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/etMessage"
-                android:text="Mensagem..."
-                android:height="100dp"
-                android:textColor="#FFF"
-                android:background="#66333333"
-                android:layout_centerVertical="true"
-                android:layout_below="@+id/etPhone"
-                android:layout_alignLeft="@+id/etPhone"
-                android:layout_alignStart="@+id/etPhone"
                 android:layout_marginTop="10dp"
-                android:selectAllOnFocus="false" />
+                android:layout_below="@id/tvVotacao"
+                android:layout_alignParentTop="true">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Alimento 1"
+                    android:id="@+id/etAliemento1"
+                    android:background="#66FFFFFF"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Alimento 2"
+                    android:id="@+id/etAliemento2"
+                    android:background="#66FFFFFF"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Alimento 3"
+                    android:id="@+id/etAliemento3"
+                    android:background="#66FFFFFF"
+                    android:textColor="#000"
+                    android:layout_marginTop="10dp"
+                    />
+
+            </LinearLayout>
 
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Enviar"
-                android:id="@+id/btnSend"
-                android:onClick="apertarBotao"
-                android:background="#66FFFFFF"
-                android:textColor="#000"
-                android:layout_below="@+id/etMessage"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEnviaAlimento"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="20dp" />
+                android:background="#66FFFFFF"
+                android:layout_below="@id/linearAlimentos"
+                android:layout_marginTop="10dp"
+                android:text="Salvar"/>
 
         </RelativeLayout>
 
@@ -130,9 +116,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home"
-        app:menu="@menu/activity_home_drawer" />
+        app:menu="@menu/activity_home_drawer_admin" />
 
 </android.support.v4.widget.DrawerLayout>
-
-
-

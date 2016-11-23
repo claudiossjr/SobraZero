@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">Sobra Zero</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="vis_resto">Visualizar restos</string>
-    <string name="vote_refe">Vote na refeição</string>
-    <string name="fale_con">Fale Conosco</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="ver_resto">Visualiza Restos</string>
+    <string name="vote_refeicao">Vote na refeição</string>
+    <string name="fale_conosco">Fale Conosco</string>
+    <string name="title_activity_nav_test_bar">NavTestBar</string>
+    <string name="app_name_admin">Sobra Zero - Admin</string>
+    <string name="statitics">Estatisticas</string>
+    <string name="edit_vot">Editar Votação</string>
+    <string name="edit_sauda">Editar Saudação</string>
 </resources>

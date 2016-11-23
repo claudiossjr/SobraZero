@@ -48,47 +48,7 @@
                 layout="@layout/footer"
                 />
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:paddingTop="150dp"
-                android:paddingLeft="50dp"
-                android:paddingRight="50dp">
-
-                <Button
-                    android:text="@string/ver_resto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/resto_btn"
-                    android:textColor="#FFF"
-                    android:background="#66333333"
-                    android:onClick="onClickSobras" />
-
-                <Button
-                    android:text="@string/vote_refeicao"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/vot_ref_btn"
-                    android:textColor="#FFF"
-                    android:background="#66333333"
-                    android:layout_marginTop="10dp"
-                    android:onClick="onClickVote" />
-
-                <Button
-                    android:text="@string/fale_conosco"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fale_con_btn"
-                    android:textColor="#FFF"
-                    android:background="#66333333"
-                    android:layout_marginTop="10dp"
-                    android:onClick="onClickContact"/>
-
-
-            </LinearLayout>
+            <!--Your Layout Here-->
 
         </RelativeLayout>
 

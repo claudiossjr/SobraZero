@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/ver_resto"
+            android:title="@string/ver_resto" />
+        <item
+            android:id="@+id/vote_refeicao"
+            android:title="@string/vote_refeicao" />
+        <item
+            android:id="@+id/fale_conosco"
+            android:title="@string/fale_conosco" />
+    </group>
+
+    <item android:title="Outros">
+        <menu>
+            <item
+                android:id="@+id/home"
+                android:title="Home" />
+            <item
+                android:id="@+id/login_admin"
+                android:title="Entrar como admin" />
+        </menu>
+    </item>
+
+</menu>

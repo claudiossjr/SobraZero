@@ -2,19 +2,18 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_tela_sobras"
+    android:id="@+id/activity_statistics_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaSobras">
+    tools:context=".StatisticsScreen">
 
-    <android.support.design.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".TelaSobras">
+        tools:context=".StatisticsScreen">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -34,7 +33,7 @@
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/content_tela_sobras"
+            android:id="@+id/content_home"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="@dimen/activity_vertical_margin"
@@ -42,77 +41,29 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".TelaSobras"
+            tools:context=".StatisticsScreen"
             android:background="@drawable/pazeamor">
 
             <include
                 layout="@layout/footer"
                 />
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/imageView"
-                android:background="@android:drawable/ic_menu_delete"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantidade de sobras: "
+                android:textColor="#FFF"
+                android:id="@+id/tvLabel"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/layout_actual_info"
-                android:layout_below="@id/imageView"
-                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tvLabel"
                 android:background="#66FFFFFF"
-                android:textColor="#000">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Mês Atual : Novembro"
-                    android:id="@+id/mesAtual"
-                    android:layout_centerHorizontal="true"
-                    android:textColor="#000"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Sobras do Dia : 106 kg"
-                    android:id="@+id/textView"
-                    android:textColor="#000"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Quantas pessoas poderiam ser alimentadas : 80 pessoas"
-                    android:id="@+id/textView2"
-                    android:textColor="#000"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/layout_actual_info"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp"
-                android:layout_centerHorizontal="true"
-                android:background="#66FFFFFF"
-                android:textColor="#000">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Meses Anteriores"
-                    android:id="@+id/textView3"
-                    android:layout_centerHorizontal="true"
-                    android:textStyle="bold"
-                    android:textColor="#000"/>
+                android:textColor="#000"
+                android:id="@+id/linearSobraMeses"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -120,6 +71,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Agosto : 89 kg"
                     android:id="@+id/textView5"
+                    android:layout_marginTop="20dp"
                     android:textColor="#000"/>
 
                 <TextView
@@ -128,6 +80,7 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Setembro : 102 kg"
                     android:id="@+id/textView6"
+                    android:layout_marginTop="20dp"
                     android:textColor="#000"/>
 
                 <TextView
@@ -136,12 +89,60 @@
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:text="Outubro : 120kg"
                     android:id="@+id/textView4"
-                    android:layout_alignRight="@+id/textView2"
-                    android:layout_alignEnd="@+id/textView2"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
                     android:textColor="#000"/>
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultado da votação: "
+                android:layout_marginTop="10dp"
+                android:textColor="#FFF"
+                android:id="@+id/tvVotacao"
+                android:layout_below="@id/linearSobraMeses"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvVotacao"
+                android:background="#66FFFFFF"
+                android:textColor="#000"
+                android:id="@+id/linearVotacao"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Almondegas : 30%"
+                    android:id="@+id/vot1"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Doce de leite : 60%"
+                    android:id="@+id/vot2"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Bacalhau : 10%"
+                    android:id="@+id/vot3"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -154,14 +155,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home"
-        app:menu="@menu/activity_home_drawer" />
+        app:menu="@menu/activity_home_drawer_admin" />
 
 </android.support.v4.widget.DrawerLayout>
-
-
-
-
-
-
-
-

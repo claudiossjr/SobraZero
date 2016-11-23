@@ -1,7 +1,13 @@
 package br.uff.labmoveis.sobrazero;
 
+import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,12 +15,24 @@ import android.widget.Button;
 
 import br.uff.labmoveis.sobrazero.Listeners.IScreen;
 
-public class VoteScreen extends AppCompatActivity implements IScreen {
+public class VoteScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IScreen {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote_screen);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_vote_screen);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         Button bExit = (Button) findViewById(R.id.btnExit);
         bExit.setOnClickListener(getExitListener(this));
@@ -31,34 +49,29 @@ public class VoteScreen extends AppCompatActivity implements IScreen {
         };
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu_screens; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_screens, menu);
-        return true;
-    }
+    public boolean onNavigationItemSelected(MenuItem item) {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
-        // Call Vote Screen
-        else if (id == R.id.action_settings) {
-            return true;
-        }
-        // Call tell us screen
-        else if (id == R.id.action_user) {
-            return true;
+        if (id == R.id.ver_resto) {
+
+        } else if (id == R.id.vote_refeicao) {
+
+        } else if (id == R.id.fale_conosco) {
+
+        } else if (id == R.id.home) {
+            Intent intent = new Intent(VoteScreen.this, HomeScreen.class);
+            startActivity(intent);
+            finishActivity();
+        } else if (id == R.id.login_admin) {
+
         }
 
-        return super.onOptionsItemSelected(item);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_vote_screen);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
     @Override

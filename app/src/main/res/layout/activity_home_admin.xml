@@ -2,10 +2,10 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_vote_screen"
+    android:id="@+id/activity_home_admin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VoteScreen">
+    tools:context=".HomeAdmin">
 
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".VoteScreen">
+        tools:context="HomeAdmin">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".VoteScreen"
+            tools:context="HomeAdmin"
             android:background="@drawable/pazeamor">
 
             <include
@@ -52,74 +52,38 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:padding="20dp">
-
-                <TextView
-                    android:text="Vote na sua comida preferida"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/textView2"
-                    android:textSize="20sp"
-                    android:textColor="#FFF"
-                    android:gravity="center" />
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp">
-
-                    <RadioButton
-                        android:text="Chocolate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioButton3"
-                        android:background="#66FFFFFF"
-                        android:textColor="#000" />
-
-                    <RadioButton
-                        android:text="Doce de Leite"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioButton2"
-                        android:background="#66FFFFFF"
-                        android:textColor="#000"
-                        android:layout_marginTop="5dp" />
-
-                    <RadioButton
-                        android:text="Strognoff"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/radioButton"
-                        android:background="#66FFFFFF"
-                        android:textColor="#000"
-                        android:layout_marginTop="5dp" />
-                </RadioGroup>
+                android:paddingTop="150dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp">
 
                 <Button
-                    android:text="Enviar"
-                    android:layout_width="wrap_content"
+                    android:text="@string/statitics"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/send_btn"
-                    android:textAlignment="center"
-                    android:background="#66FFFFFF"
-                    android:textColor="#000"
-                    android:layout_gravity="center"
+                    android:id="@+id/resto_btn"
+                    android:textColor="#FFF"
+                    android:background="#66333333" />
+
+                <Button
+                    android:text="@string/edit_vot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/vot_ref_btn"
+                    android:textColor="#FFF"
+                    android:background="#66333333"
                     android:layout_marginTop="10dp" />
 
                 <Button
-                    android:text="Entre em contato"
-                    android:layout_width="151dp"
+                    android:text="@string/edit_sauda"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/button2"
-                    android:layout_marginTop="50dp"
-                    android:textColor="#000"
-                    android:background="#66FFFFFF" />
+                    android:id="@+id/fale_con_btn"
+                    android:textColor="#FFF"
+                    android:background="#66333333"
+                    android:layout_marginTop="10dp"/>
+
 
             </LinearLayout>
 
@@ -134,10 +98,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_home"
-        app:menu="@menu/activity_home_drawer" />
+        app:menu="@menu/activity_home_drawer_admin" />
 
 </android.support.v4.widget.DrawerLayout>
-
-
-
-
