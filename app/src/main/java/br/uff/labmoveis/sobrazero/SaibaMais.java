@@ -11,23 +11,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import br.uff.labmoveis.sobrazero.Models.IScreen;
 
-public class SaudacaoEdicao extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IScreen {
+public class SaibaMais extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IScreen {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_saudacao_edicao);
-
-        ManagerActivity.setCurrentActivity(this);
-
+        setContentView(R.layout.activity_saiba_mais);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_saudacao_edicao);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_saiba_mais);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -57,27 +53,29 @@ public class SaudacaoEdicao extends AppCompatActivity implements NavigationView.
 
         int id = item.getItemId();
 
-        if (id == R.id.statistics) {
-            Intent intent = new Intent(SaudacaoEdicao.this, StatisticsScreen.class);
+        if (id == R.id.ver_resto) {
+            Intent intent = new Intent(SaibaMais.this, TelaSobras.class);
             startActivity(intent);
             finishActivity();
-        } else if (id == R.id.edit_saudacao) {
-            Toast.makeText(this, "Você já está na tela de edição", Toast.LENGTH_SHORT );
-        } else if (id == R.id.edit_votacao) {
-            Intent intent = new Intent(SaudacaoEdicao.this, VotacaoAdmin.class);
+        } else if (id == R.id.vote_refeicao) {
+            Intent intent = new Intent(SaibaMais.this, VoteScreen.class);
+            startActivity(intent);
+            finishActivity();
+        } else if (id == R.id.fale_conosco) {
+            Intent intent = new Intent(SaibaMais.this, ContactScreen.class);
             startActivity(intent);
             finishActivity();
         } else if (id == R.id.home) {
-            Intent intent = new Intent(SaudacaoEdicao.this, HomeAdmin.class);
+            Intent intent = new Intent(SaibaMais.this, HomeScreen.class);
             startActivity(intent);
             finishActivity();
-        } else if (id == R.id.logout_admin) {
-            Intent intent = new Intent(SaudacaoEdicao.this, HomeScreen.class);
+        } else if (id == R.id.login_admin) {
+            Intent intent = new Intent(SaibaMais.this, HomeAdmin.class);
             startActivity(intent);
             finishActivity();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_saudacao_edicao);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_saiba_mais);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -86,4 +84,6 @@ public class SaudacaoEdicao extends AppCompatActivity implements NavigationView.
     public void finishActivity() {
         finish();
     }
+
+
 }

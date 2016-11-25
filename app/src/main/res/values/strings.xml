@@ -13,4 +13,9 @@
     <string name="statitics">Estatisticas</string>
     <string name="edit_vot">Editar Votação</string>
     <string name="edit_sauda">Editar Saudação</string>
+    <string name="saiba_mais">O Sobra Zero é um projeto idealizado para conscientizar usuarios dos restaurantes universitarios sobre o desperdicio de comida,
+    atravez da exposição, em tempo real da quantidade de alimentos disperdiçados diariamente, atravez dessa exposição esperamos reduzir o
+    indice de sobras e trazer um retorno positivo para o meio ambiente em relação a redução de residuos e aos usuarios dos restaurantes
+    atraves de recompensas como refeições e sobremesas mais apetitosas que só podem ser servidas porque a verba que antes era gasta
+    com alimentos que eram disperdiçados agora pode ser redirecionada para atender melhor os frequentadores dos reustaurantes universitarios.</string>
 </resources>
