@@ -1,11 +1,10 @@
 package br.uff.labmoveis.sobrazero;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import br.uff.labmoveis.sobrazero.Listeners.IScreen;
+import br.uff.labmoveis.sobrazero.Models.IScreen;
 
 public class ManagerActivity extends AppCompatActivity implements IScreen {
 
@@ -37,6 +36,11 @@ public class ManagerActivity extends AppCompatActivity implements IScreen {
 
     }
 
+    @Override
+    public void finishActivity() {
+        finish();
+    }
+
     private static void closeLast() {
         lastActivity.finishActivity();
     }
@@ -55,9 +59,4 @@ public class ManagerActivity extends AppCompatActivity implements IScreen {
 
     }
 
-
-    @Override
-    public void finishActivity() {
-        finish();
-    }
 }

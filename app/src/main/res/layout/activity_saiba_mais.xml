@@ -2,10 +2,10 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_home_screen"
+    android:id="@+id/activity_saiba_mais"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeScreen">
+    tools:context=".SaibaMais">
 
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="br.uff.labmoveis.sobrazero.HomeActivity">
+        tools:context="br.uff.labmoveis.sobrazero.SaibaMais">
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context="br.uff.labmoveis.sobrazero.HomeActivity"
+            tools:context="br.uff.labmoveis.sobrazero.SaibaMais"
             android:background="@drawable/pazeamor">
 
             <include
@@ -49,6 +49,31 @@
                 />
 
             <!--Your Layout Here-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saiba Mais:"
+                android:textColor="#FFF"
+                android:id="@+id/tvLb"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvLb"
+                android:background="#66FFFFFF"
+                android:textColor="#000"
+                android:id="@+id/linearSobraMeses"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saiba_mais"
+                    android:textColor="#000"
+                    android:id="@+id/tvLabel"/>
+
+            </LinearLayout>
 
         </RelativeLayout>
 
@@ -60,7 +85,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_home_admin"
-        app:menu="@menu/activity_home_drawer_admin" />
+        app:headerLayout="@layout/nav_header_home"
+        app:menu="@menu/activity_home_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

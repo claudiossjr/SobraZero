@@ -11,16 +11,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import br.uff.labmoveis.sobrazero.Listeners.IScreen;
+import br.uff.labmoveis.sobrazero.Models.IScreen;
 
 public class HomeScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,  IScreen{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Sobra Zero");
+        ManagerActivity.setCurrentActivity(this);
 
         ManagerActivity.setCurrentActivity(this);
 
@@ -39,7 +40,22 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
 
         Button bExit = (Button) findViewById(R.id.btnExit);
         bExit.setOnClickListener(getExitListener(this));
+
+        TextView tView = (TextView) findViewById(R.id.textView);
+        tView.setOnClickListener(getSaibaMaisListener(this));
     }
+
+    private View.OnClickListener getSaibaMaisListener(final IScreen homeScreen) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeScreen.this, SaibaMais.class);
+                startActivity(intent);
+                homeScreen.finishActivity();
+            }
+        };
+    }
+
 
     public View.OnClickListener getExitListener(final IScreen hmScreen)
     {
@@ -77,16 +93,23 @@ public class HomeScreen extends AppCompatActivity implements NavigationView.OnNa
         int id = item.getItemId();
 
         if (id == R.id.ver_resto) {
-
+            Intent intent = new Intent(HomeScreen.this, TelaSobras.class);
+            startActivity(intent);
+            finishActivity();
         } else if (id == R.id.vote_refeicao) {
-
+            Intent intent = new Intent(HomeScreen.this, VoteScreen.class);
+            startActivity(intent);
+            finishActivity();
         } else if (id == R.id.fale_conosco) {
-
+            Intent intent = new Intent(HomeScreen.this, ContactScreen.class);
+            startActivity(intent);
+            finishActivity();
         } else if (id == R.id.home) {
             Toast.makeText(this, "Você já está na Home", Toast.LENGTH_SHORT );
         } else if (id == R.id.login_admin) {
             Intent intent = new Intent(HomeScreen.this, HomeAdmin.class);
             startActivity(intent);
+            finishActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_home_screen);

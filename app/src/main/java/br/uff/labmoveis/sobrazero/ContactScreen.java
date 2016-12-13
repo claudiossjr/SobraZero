@@ -12,8 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import br.uff.labmoveis.sobrazero.Listeners.IScreen;
+import br.uff.labmoveis.sobrazero.Models.IScreen;
 
 public class ContactScreen extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IScreen{
 
@@ -21,6 +22,8 @@ public class ContactScreen extends AppCompatActivity implements NavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_screen);
+
+        ManagerActivity.setCurrentActivity(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -36,6 +39,20 @@ public class ContactScreen extends AppCompatActivity implements NavigationView.O
 
         Button bExit = (Button) findViewById(R.id.btnExit);
         bExit.setOnClickListener(getExitListener(this));
+
+        TextView tView = (TextView) findViewById(R.id.textView);
+        tView.setOnClickListener(getSaibaMaisListener(this));
+    }
+
+    private View.OnClickListener getSaibaMaisListener(final IScreen homeScreen) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ContactScreen.this, SaibaMais.class);
+                startActivity(intent);
+                homeScreen.finishActivity();
+            }
+        };
     }
 
     public View.OnClickListener getExitListener(final IScreen hmScreen)
@@ -56,17 +73,23 @@ public class ContactScreen extends AppCompatActivity implements NavigationView.O
         int id = item.getItemId();
 
         if (id == R.id.ver_resto) {
-
+            Intent intent = new Intent(ContactScreen.this, TelaSobras.class);
+            startActivity(intent);
+            finishActivity();
         } else if (id == R.id.vote_refeicao) {
-
+            Intent intent = new Intent(ContactScreen.this, VoteScreen.class);
+            startActivity(intent);
+            finishActivity();
         } else if (id == R.id.fale_conosco) {
-
+            Toast.makeText(this, "Já está na tela", Toast.LENGTH_SHORT);
         } else if (id == R.id.home) {
             Intent intent = new Intent(ContactScreen.this, HomeScreen.class);
             startActivity(intent);
             finishActivity();
         } else if (id == R.id.login_admin) {
-
+            Intent intent = new Intent(ContactScreen.this, HomeAdmin.class);
+            startActivity(intent);
+            finishActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_contact_screen);

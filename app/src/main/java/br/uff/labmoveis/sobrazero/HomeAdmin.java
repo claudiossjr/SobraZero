@@ -1,5 +1,6 @@
 package br.uff.labmoveis.sobrazero;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,7 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import br.uff.labmoveis.sobrazero.Listeners.IScreen;
+import br.uff.labmoveis.sobrazero.Models.IScreen;
 
 public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, IScreen {
 
@@ -21,21 +22,23 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_admin);
 
+        ManagerActivity.setCurrentActivity(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_home_admin);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+    DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_home_admin);
+    ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+    drawer.setDrawerListener(toggle);
+    toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+    NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+    navigationView.setNavigationItemSelectedListener(this);
 
-        Button bExit = (Button) findViewById(R.id.btnExit);
-        bExit.setOnClickListener(getExitListener(this));
-    }
+    Button bExit = (Button) findViewById(R.id.btnExit);
+    bExit.setOnClickListener(getExitListener(this));
+}
 
     public View.OnClickListener getExitListener(final IScreen hmScreen)
     {
@@ -48,22 +51,48 @@ public class HomeAdmin extends AppCompatActivity implements NavigationView.OnNav
         };
     }
 
+    public void onClickStats (View v ) {
+        Intent intent = new Intent(HomeAdmin.this, StatisticsScreen.class);
+        startActivity(intent);
+        finishActivity();
+    }
+
+    public void onClickEditSaud (View v ) {
+        Intent intent = new Intent(HomeAdmin.this, SaudacaoEdicao.class);
+        startActivity(intent);
+        finishActivity();
+    }
+
+    public void onClickVoteAdmin (View v ) {
+        Intent intent = new Intent(HomeAdmin.this, VotacaoAdmin.class);
+        startActivity(intent);
+        finishActivity();
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
         int id = item.getItemId();
 
-        if (id == R.id.ver_resto) {
-
-        } else if (id == R.id.vote_refeicao) {
-
-        } else if (id == R.id.fale_conosco) {
-
+        if (id == R.id.statistics) {
+            Intent intent = new Intent(HomeAdmin.this, StatisticsScreen.class);
+            startActivity(intent);
+            finishActivity();
+        } else if (id == R.id.edit_saudacao) {
+            Intent intent = new Intent(HomeAdmin.this, SaudacaoEdicao.class);
+            startActivity(intent);
+            finishActivity();
+        } else if (id == R.id.edit_votacao) {
+            Intent intent = new Intent(HomeAdmin.this, VotacaoAdmin.class);
+            startActivity(intent);
+            finishActivity();
         } else if (id == R.id.home) {
             Toast.makeText(this, "Você já está na Home", Toast.LENGTH_SHORT );
         } else if (id == R.id.logout_admin) {
-
+            Intent intent = new Intent(HomeAdmin.this, HomeScreen.class);
+            startActivity(intent);
+            finishActivity();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.activity_home_admin);
